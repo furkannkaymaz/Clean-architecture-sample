@@ -13,6 +13,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
 
+
     override val viewModel: HomeViewModel by viewModels()
 
     override fun viewCreated() {

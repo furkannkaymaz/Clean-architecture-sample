@@ -35,13 +35,15 @@ class HomeViewModel @Inject constructor(
     fun getCompatations() {
 
         viewModelScope.launch {
-            val response = getContentCompatationsUseCase.invoke()
-            when (response) {
+            when (val response = getContentCompatationsUseCase.invoke()) {
                 is Resource.Success -> {
                     _compatationList.value = response.data!!
                     _state.value = UIStatus.SUCCESS
                 }
                 is Resource.Error -> {
+                    _state.value = UIStatus.ERROR
+                }
+                else -> {
                     _state.value = UIStatus.ERROR
                 }
             }

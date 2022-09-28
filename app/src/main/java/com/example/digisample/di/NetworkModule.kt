@@ -1,6 +1,5 @@
 package com.example.digisample.di
 
-import android.content.Context
 import com.example.digisample.BuildConfig
 import com.example.digisample.BuildConfig.BASE_URL
 import dagger.Module
@@ -11,14 +10,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.security.SecureRandom
-import java.security.cert.CertificateException
-import java.security.cert.X509Certificate
 import javax.inject.Singleton
-import javax.net.ssl.HostnameVerifier
-import javax.net.ssl.SSLContext
-import javax.net.ssl.TrustManager
-import javax.net.ssl.X509TrustManager
 
 /**
  * Created by DTFKAYMAZ on 27.09.2022.
