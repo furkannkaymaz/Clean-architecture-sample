@@ -7,6 +7,7 @@ import kotlinx.coroutines.withContext
 /**
  * Created by DTFKAYMAZ on 28.09.2022.
  */
+
 abstract class BaseRepository {
 
     suspend fun <T >safeApiCall(
