@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
-import com.example.digisample.utils.UIStatus
 
 /**
  * Created by DTFKAYMAZ on 27.09.2022.
