@@ -1,4 +1,4 @@
-package com.furkan.tfkbcase.data.model
+package com.example.cleanarcsample.data.songs.model
 
 import java.io.Serializable
 

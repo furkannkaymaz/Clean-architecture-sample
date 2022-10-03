@@ -1,6 +1,6 @@
 package com.example.cleanarcsample.domain.home
 
-import com.furkan.tfkbcase.data.model.SongModel
+import com.example.cleanarcsample.data.songs.model.SongModel
 
 
 interface SongRepository {

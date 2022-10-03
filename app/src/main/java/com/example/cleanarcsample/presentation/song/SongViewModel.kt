@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.cleanarcsample.domain.home.GetSongUserCase
 import com.example.cleanarcsample.utils.UIStatus
-import com.furkan.tfkbcase.data.model.SongModel
+import com.example.cleanarcsample.data.songs.model.SongModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
