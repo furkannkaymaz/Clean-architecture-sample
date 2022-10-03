@@ -18,7 +18,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     override val viewModel: HomeViewModel by viewModels()
 
     override fun viewCreated() {
-        viewModel.getCompatations("a",5,5)
+        viewModel.getSongs("a",5,5)
     }
 
     override fun observerData() {

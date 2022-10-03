@@ -5,8 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-
-import com.example.cleanarcsample.domain.home.GetContentCompatationsUseCase
+import com.example.cleanarcsample.domain.home.GetSongUserCase
 import com.example.cleanarcsample.utils.UIStatus
 import com.furkan.tfkbcase.data.model.SongModel
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -16,7 +15,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val getContentCompatationsUseCase: GetContentCompatationsUseCase
+    private val getSongUserCase: GetSongUserCase
 ) : ViewModel() {
 
     private val _compatationList = MutableLiveData<SongModel>()
@@ -25,7 +24,7 @@ class HomeViewModel @Inject constructor(
     private val _state = MutableLiveData(UIStatus.LOADING)
     val state: LiveData<UIStatus> get() = _state
 
-    fun getCompatations(keyyword : String, offset : Int , limit : Int) {
+    fun getSongs(keyyword : String, offset : Int , limit : Int) {
 
         viewModelScope.launch {
        // when (val response = getContentCompatationsUseCase.invoke()) {
@@ -40,7 +39,7 @@ class HomeViewModel @Inject constructor(
        //         _state.value = UIStatus.ERROR
        //     }
        // }
-                _compatationList.value = getContentCompatationsUseCase.invoke(keyyword,offset,limit)
+                _compatationList.value = getSongUserCase.invoke(keyyword,offset,limit)
             Log.d("deneme",compatationList.value?.results.toString())
 
 
