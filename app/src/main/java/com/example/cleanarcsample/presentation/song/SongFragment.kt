@@ -6,13 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.cleanarcsample.base.BaseFragment
-import com.example.cleanarcsample.databinding.FragmentHomeBinding
+import com.example.cleanarcsample.databinding.FragmentSongBinding
 import com.example.cleanarcsample.utils.UIStatus
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding, SongViewModel>() {
+class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
 
     override val viewModel: SongViewModel by viewModels()
 
@@ -22,15 +22,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, SongViewModel>() {
 
     override fun observerData() {
         super.observerData()
-        viewModel.songList.observe(viewLifecycleOwner) {
-       // it.Data?.Items?.forEach {
-       //     it.Items.forEach{
-       //         Log.d("Teams123",it.Name)
-       //     }
-       // }
-            Log.d("deneme",it.toString())
-        Log.d("deneme",it.toString())
-        }
+        viewModel.songList.observe(viewLifecycleOwner) {}
+
         viewModel.state.observe(viewLifecycleOwner) {
             if (it == UIStatus.SUCCESS) {
                 binding?.pb?.visibility = View.GONE
@@ -44,7 +37,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, SongViewModel>() {
     override fun layoutResource(
         inflater: LayoutInflater,
         container: ViewGroup?
-    ): FragmentHomeBinding {
-        return FragmentHomeBinding.inflate(inflater, container, false)
+    ): FragmentSongBinding {
+        return FragmentSongBinding.inflate(inflater, container, false)
     }
 }

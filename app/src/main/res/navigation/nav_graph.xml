@@ -9,5 +9,5 @@
         android:id="@+id/homeFragment"
         android:name="com.example.cleanarcsample.presentation.song.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_song" />
 </navigation>
