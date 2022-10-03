@@ -7,10 +7,6 @@ import kotlinx.coroutines.flow.Flow
 import retrofit2.HttpException
 import javax.inject.Inject
 
-/**
- * Created by DTFKAYMAZ on 27.09.2022.
- */
-
 class GetContentCompatationsUseCase @Inject constructor(
     private val homeRepository: HomeRepository
 ) {

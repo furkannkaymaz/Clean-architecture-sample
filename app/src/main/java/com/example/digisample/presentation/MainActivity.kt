@@ -1,15 +1,15 @@
-package com.example.digisample
+package com.example.digisample.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.digisample.R
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.custom_loading_view.*
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        
+
     }
 }

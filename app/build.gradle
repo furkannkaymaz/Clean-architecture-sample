@@ -28,7 +28,7 @@ android {
         debug{
             debuggable true
             minifyEnabled false
-            buildConfigField 'String', 'BASE_URL', "\"https://v3-mobileservice.apacreg.beiniz.biz\""
+            buildConfigField 'String', 'BASE_URL', "\"https://itunes.apple.com/\""
         }
     }
 

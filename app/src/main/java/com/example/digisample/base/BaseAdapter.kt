@@ -6,10 +6,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-/**
- * Created by DTFKAYMAZ on 27.09.2022.
- */
-
 abstract class BaseAdapter<Object, ViewHolder : RecyclerView.ViewHolder> : RecyclerView.Adapter<ViewHolder>() {
 
     private var items: List<Object?>? = null
