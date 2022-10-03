@@ -17,17 +17,17 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     override val viewModel: HomeViewModel by viewModels()
 
     override fun viewCreated() {
-        viewModel.getCompatations()
+        viewModel.getCompatations("a",5,5)
     }
 
     override fun observerData() {
         super.observerData()
         viewModel.compatationList.observe(viewLifecycleOwner) {
-            it.Data?.Items?.forEach {
-                it.Items.forEach{
-                    Log.d("Teams123",it.Name)
-                }
-            }
+       // it.Data?.Items?.forEach {
+       //     it.Items.forEach{
+       //         Log.d("Teams123",it.Name)
+       //     }
+       // }
 
         }
         viewModel.state.observe(viewLifecycleOwner) {

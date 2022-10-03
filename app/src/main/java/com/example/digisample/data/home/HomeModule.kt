@@ -19,13 +19,14 @@ import javax.inject.Singleton
 class HomeModule {
     @Singleton
     @Provides
-    fun provideHomeApi(retrofit: Retrofit) : HomeApiServices {
+    fun provideHomeApi(retrofit: Retrofit): HomeApiServices {
         return retrofit.create(HomeApiServices::class.java)
     }
 
     @Singleton
     @Provides
-    fun provideHomeRepository(homeApi: HomeApiServices) : HomeRepository {
+    fun provideHomeRepository(homeApi: HomeApiServices): HomeRepository {
         return HomeRepositoryImpl(homeApi)
     }
+
 }

@@ -1,15 +1,17 @@
 package com.example.digisample.data.network
 
-import com.example.digisample.data.home.model.CompetitionData
-import com.example.digisample.utils.Resource
-import retrofit2.http.Header
-import retrofit2.http.POST
+import com.furkan.tfkbcase.data.model.SongModel
+import retrofit2.http.GET
+import retrofit2.http.Query
 
 /**
  * Created by DTFKAYMAZ on 27.09.2022.
  */
 interface HomeApiServices {
 
-    @POST("/api/content/competitions")
-    suspend fun getContentCompetitions() : CompetitionData
+    @GET("search")
+    suspend fun getData(@Query("term") keyword: String,
+                        @Query("offset") offset: Int,
+                        @Query("limit") limit: Int): SongModel
+
 }

@@ -12,10 +12,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-/**
- * Created by DTFKAYMAZ on 27.09.2022.
- */
-
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
@@ -37,7 +33,6 @@ object NetworkModule {
         loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
         OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
-            .cookieJar(WebviewCookieHandler())
             .build()
     } else {
         OkHttpClient
