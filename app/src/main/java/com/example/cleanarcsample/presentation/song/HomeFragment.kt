@@ -1,4 +1,4 @@
-package com.example.cleanarcsample.presentation.home
+package com.example.cleanarcsample.presentation.song
 
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,10 +12,9 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
+class HomeFragment : BaseFragment<FragmentHomeBinding, SongViewModel>() {
 
-
-    override val viewModel: HomeViewModel by viewModels()
+    override val viewModel: SongViewModel by viewModels()
 
     override fun viewCreated() {
         viewModel.getSongs("a",5,5)
@@ -23,7 +22,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
 
     override fun observerData() {
         super.observerData()
-        viewModel.compatationList.observe(viewLifecycleOwner) {
+        viewModel.songList.observe(viewLifecycleOwner) {
        // it.Data?.Items?.forEach {
        //     it.Items.forEach{
        //         Log.d("Teams123",it.Name)

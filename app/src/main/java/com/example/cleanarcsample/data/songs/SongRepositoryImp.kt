@@ -1,4 +1,4 @@
-package com.example.cleanarcsample.data.home
+package com.example.cleanarcsample.data.songs
 
 import com.example.cleanarcsample.data.network.SongApiServices
 import com.example.cleanarcsample.domain.home.SongRepository

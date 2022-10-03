@@ -1,4 +1,4 @@
-package com.example.cleanarcsample.presentation.home
+package com.example.cleanarcsample.presentation.song
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -14,12 +14,12 @@ import javax.inject.Inject
 
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(
+class SongViewModel @Inject constructor(
     private val getSongUserCase: GetSongUserCase
 ) : ViewModel() {
 
-    private val _compatationList = MutableLiveData<SongModel>()
-    val compatationList: LiveData<SongModel> = _compatationList
+    private val _songList = MutableLiveData<SongModel>()
+    val songList: LiveData<SongModel> = _songList
 
     private val _state = MutableLiveData(UIStatus.LOADING)
     val state: LiveData<UIStatus> get() = _state
@@ -39,8 +39,8 @@ class HomeViewModel @Inject constructor(
        //         _state.value = UIStatus.ERROR
        //     }
        // }
-                _compatationList.value = getSongUserCase.invoke(keyyword,offset,limit)
-            Log.d("deneme",compatationList.value?.results.toString())
+            _songList.value = getSongUserCase.invoke(keyyword,offset,limit)
+            Log.d("deneme",_songList.value?.results.toString())
 
 
 
