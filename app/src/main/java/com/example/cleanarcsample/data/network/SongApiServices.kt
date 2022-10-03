@@ -5,7 +5,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 
-interface HomeApiServices {
+interface SongApiServices {
 
     @GET("search")
     suspend fun getData(@Query("term") keyword: String,

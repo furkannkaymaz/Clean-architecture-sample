@@ -5,11 +5,11 @@ import retrofit2.HttpException
 import javax.inject.Inject
 
 class GetContentCompatationsUseCase @Inject constructor(
-    private val homeRepository: HomeRepository
+    private val songRepository: SongRepository
 ) {
     suspend fun invoke(keyword : String, offset : Int, limit : Int): SongModel? {
         return try {
-            homeRepository.getSong(keyword,limit,offset)
+            songRepository.getSong(keyword,limit,offset)
         }catch (e : HttpException){
             null
         }

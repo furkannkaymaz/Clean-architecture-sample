@@ -1,5 +1,6 @@
 package com.example.cleanarcsample.presentation.home
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,7 +29,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
        //         Log.d("Teams123",it.Name)
        //     }
        // }
-
+            Log.d("deneme",it.toString())
+        Log.d("deneme",it.toString())
         }
         viewModel.state.observe(viewLifecycleOwner) {
             if (it == UIStatus.SUCCESS) {
