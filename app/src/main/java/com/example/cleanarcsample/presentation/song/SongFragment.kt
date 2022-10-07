@@ -1,5 +1,6 @@
 package com.example.cleanarcsample.presentation.song
 
+
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +10,6 @@ import com.example.cleanarcsample.base.BaseFragment
 import com.example.cleanarcsample.databinding.FragmentSongBinding
 import com.example.cleanarcsample.utils.UIStatus
 import dagger.hilt.android.AndroidEntryPoint
-
 
 @AndroidEntryPoint
 class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
@@ -22,7 +22,9 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
 
     override fun observerData() {
         super.observerData()
-        viewModel.songList.observe(viewLifecycleOwner) {}
+        viewModel.songList.observe(viewLifecycleOwner) {
+            Log.d("Data",it.toString())
+        }
 
         viewModel.state.observe(viewLifecycleOwner) {
             if (it == UIStatus.SUCCESS) {
