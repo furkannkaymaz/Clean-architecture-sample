@@ -1,8 +1,8 @@
 package com.example.cleanarcsample.data.songs
 
 import com.example.cleanarcsample.data.network.SongApiServices
-import com.example.cleanarcsample.di.NetworkModule
-import com.example.cleanarcsample.domain.home.SongRepository
+import com.example.cleanarcsample.app.di.NetworkModule
+import com.example.cleanarcsample.domain.song.SongRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,6 +13,7 @@ import javax.inject.Singleton
 @Module(includes = [NetworkModule::class])
 @InstallIn(SingletonComponent::class)
 class SongModule {
+
     @Singleton
     @Provides
     fun provideHomeApi(retrofit: Retrofit): SongApiServices {

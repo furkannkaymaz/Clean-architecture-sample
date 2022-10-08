@@ -5,9 +5,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.cleanarcsample.domain.home.GetSongUserCase
+import com.example.cleanarcsample.domain.song.GetSongUserCase
 import com.example.cleanarcsample.utils.UIStatus
 import com.example.cleanarcsample.data.songs.model.SongModel
+import com.example.cleanarcsample.utils.extensions.launchOnIO
+import com.example.cleanarcsample.utils.extensions.launchOnMain
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -26,24 +28,9 @@ class SongViewModel @Inject constructor(
 
     fun getSongs(keyyword : String, offset : Int , limit : Int) {
 
-        viewModelScope.launch {
-       // when (val response = getContentCompatationsUseCase.invoke()) {
-       //     is Resource.Success -> {
-       //         _compatationList.value = response.data!!
-       //         _state.value = UIStatus.SUCCESS
-       //     }
-       //     is Resource.Error -> {
-       //         _state.value = UIStatus.ERROR
-       //     }
-       //     else -> {
-       //         _state.value = UIStatus.ERROR
-       //     }
-       // }
+        viewModelScope.launchOnMain {
             _songList.value = getSongUserCase.invoke(keyyword,offset,limit)
-            Log.d("deneme",_songList.value?.results.toString())
-
-
-
+            _state.value = UIStatus.SUCCESS
         }
     }
 }

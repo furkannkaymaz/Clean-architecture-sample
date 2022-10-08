@@ -1,4 +1,4 @@
-package com.example.cleanarcsample.presentation
+package com.example.cleanarcsample.presentation.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

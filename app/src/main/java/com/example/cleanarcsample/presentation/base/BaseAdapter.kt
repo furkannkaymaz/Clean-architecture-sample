@@ -1,4 +1,4 @@
-package com.example.cleanarcsample.base
+package com.example.cleanarcsample.presentation.base
 
 import android.annotation.SuppressLint
 import android.content.Context

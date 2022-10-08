@@ -1,4 +1,4 @@
-package com.example.cleanarcsample.domain.home
+package com.example.cleanarcsample.domain.song
 
 import com.example.cleanarcsample.data.songs.model.SongModel
 

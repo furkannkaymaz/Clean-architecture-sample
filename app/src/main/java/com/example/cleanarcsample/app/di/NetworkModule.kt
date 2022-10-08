@@ -1,4 +1,4 @@
-package com.example.cleanarcsample.di
+package com.example.cleanarcsample.app.di
 
 import com.example.cleanarcsample.BuildConfig
 import com.example.cleanarcsample.BuildConfig.BASE_URL

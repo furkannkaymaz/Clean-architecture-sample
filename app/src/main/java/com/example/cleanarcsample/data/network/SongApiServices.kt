@@ -11,5 +11,4 @@ interface SongApiServices {
     suspend fun getData(@Query("term") keyword: String,
                         @Query("offset") offset: Int,
                         @Query("limit") limit: Int): SongModel
-
 }

@@ -7,3 +7,4 @@ sealed class Resource<T>(
     class Success<T>(data: T) : Resource<T>(data)
     class Error<T>(message: String?, data: T?) : Resource<T>(data, message)
 }
+// you can use for network response handle

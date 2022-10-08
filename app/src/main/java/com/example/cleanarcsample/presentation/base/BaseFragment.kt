@@ -1,4 +1,4 @@
-package com.example.cleanarcsample.base
+package com.example.cleanarcsample.presentation.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
