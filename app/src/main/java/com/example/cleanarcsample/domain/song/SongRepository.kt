@@ -1,7 +1,7 @@
 package com.example.cleanarcsample.domain.song
 
 import com.example.cleanarcsample.data.songs.model.SongModel
-import com.example.cleanarcsample.utils.Resource
+import com.example.cleanarcsample.utils.response.Resource
 
 
 interface SongRepository {

@@ -1,16 +1,13 @@
 package com.example.cleanarcsample.presentation.song
 
 
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.cleanarcsample.databinding.FragmentSongBinding
 import com.example.cleanarcsample.presentation.base.BaseFragment
-import com.example.cleanarcsample.utils.UIStatus
+import com.example.cleanarcsample.utils.response.UIStatus
 import com.example.cleanarcsample.utils.extensions.listen
 import com.example.cleanarcsample.utils.extensions.toast
 import dagger.hilt.android.AndroidEntryPoint

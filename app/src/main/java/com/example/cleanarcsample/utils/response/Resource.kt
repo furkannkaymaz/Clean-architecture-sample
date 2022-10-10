@@ -1,4 +1,4 @@
-package com.example.cleanarcsample.utils
+package com.example.cleanarcsample.utils.response
 
 sealed class Resource<T>(
     val data: T? = null,
@@ -7,5 +7,5 @@ sealed class Resource<T>(
 ) {
     class Success<T>(data: T, state: UIStatus?) : Resource<T>(data, null, state)
     class Error<T>(message: String?, data: T?, state: UIStatus?) : Resource<T>(null, message, state)
-    class Loading<T>() : Resource<T>()
+    class Loading<T>(state : UIStatus) : Resource<T>(null,null,state)
 }
