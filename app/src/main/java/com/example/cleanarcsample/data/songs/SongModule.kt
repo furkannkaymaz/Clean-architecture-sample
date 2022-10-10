@@ -16,13 +16,13 @@ class SongModule {
 
     @Singleton
     @Provides
-    fun provideHomeApi(retrofit: Retrofit): SongApiServices {
+    fun provideSongApi(retrofit: Retrofit): SongApiServices {
         return retrofit.create(SongApiServices::class.java)
     }
 
     @Singleton
     @Provides
-    fun provideHomeRepository(songApi: SongApiServices): SongRepository {
+    fun provideSongRepository(songApi: SongApiServices): SongRepository {
         return SongRepositoryImp(songApi)
     }
 
