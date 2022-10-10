@@ -21,23 +21,19 @@ class SongViewModel @Inject constructor(
     private val getSongUserCase: GetSongUserCase
 ) : ViewModel() {
 
-    private val _songList = MutableLiveData<SongModel?>()
-    val songList: LiveData<SongModel?> = _songList
-
-    private val _state = MutableLiveData(UIStatus.LOADING)
-    val state: LiveData<UIStatus> get() = _state
+    private val _songList = MutableLiveData<Resource<SongModel?>>()
+    val songList: LiveData<Resource<SongModel?>> = _songList
 
     fun getSongs(keyyword: String, offset: Int, limit: Int) {
 
         viewModelScope.launchOnMain {
-            val result = getSongUserCase.invoke(keyyword, offset, limit)
-            when (result) {
+            val response = getSongUserCase.invoke(keyyword, offset, limit)
+            when (response) {
                 is Resource.Success -> {
-                    _songList.value = result.data
-                    _state.value = UIStatus.SUCCESS
+                    _songList.value = Resource.Success(response.data,response.state)
                 }
                 is Resource.Error -> {
-                    _state.value = UIStatus.ERROR
+                    _songList.value = Resource.Error("Hata",null,response.state)
                 }
 
             }

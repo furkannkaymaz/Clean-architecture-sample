@@ -3,8 +3,10 @@ package com.example.cleanarcsample.utils
 sealed class Resource<T>(
     val data: T? = null,
     val message: String? = null,
+    var state: UIStatus? = null
 ) {
-    class Success<T>(data: T) : Resource<T>(data)
-    class Error<T>(message: String?, data: T?) : Resource<T>(data, message)
+    class Success<T>(data: T, state: UIStatus?) : Resource<T>(data, null, state)
+    class Error<T>(message: String?, data: T?, state: UIStatus?) :
+        Resource<T>(null, message, state)
 }
 // you can use for network response handle
