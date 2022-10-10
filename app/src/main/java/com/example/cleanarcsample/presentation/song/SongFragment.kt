@@ -1,6 +1,7 @@
 package com.example.cleanarcsample.presentation.song
 
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,10 @@ import com.example.cleanarcsample.databinding.FragmentSongBinding
 import com.example.cleanarcsample.presentation.base.BaseFragment
 import com.example.cleanarcsample.utils.UIStatus
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 @AndroidEntryPoint
 class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
