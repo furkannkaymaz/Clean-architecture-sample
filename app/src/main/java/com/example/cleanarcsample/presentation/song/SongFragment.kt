@@ -26,7 +26,7 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
         viewModel.songList.observe(viewLifecycleOwner) { it ->
             var value = ""
 
-            it.results?.forEach {
+            it?.results?.forEach {
                 value += it.artistName
                 value += "\n"
                 binding?.tvSong?.text = value

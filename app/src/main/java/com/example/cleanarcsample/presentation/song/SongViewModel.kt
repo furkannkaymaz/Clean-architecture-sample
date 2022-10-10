@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.cleanarcsample.domain.song.GetSongUserCase
 import com.example.cleanarcsample.utils.UIStatus
 import com.example.cleanarcsample.data.songs.model.SongModel
+import com.example.cleanarcsample.utils.Resource
 import com.example.cleanarcsample.utils.extensions.launchOnIO
 import com.example.cleanarcsample.utils.extensions.launchOnMain
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -20,17 +21,26 @@ class SongViewModel @Inject constructor(
     private val getSongUserCase: GetSongUserCase
 ) : ViewModel() {
 
-    private val _songList = MutableLiveData<SongModel>()
-    val songList: LiveData<SongModel> = _songList
+    private val _songList = MutableLiveData<SongModel?>()
+    val songList: LiveData<SongModel?> = _songList
 
     private val _state = MutableLiveData(UIStatus.LOADING)
     val state: LiveData<UIStatus> get() = _state
 
-    fun getSongs(keyyword : String, offset : Int , limit : Int) {
+    fun getSongs(keyyword: String, offset: Int, limit: Int) {
 
         viewModelScope.launchOnMain {
-            _songList.value = getSongUserCase.invoke(keyyword,offset,limit)
-            _state.value = UIStatus.SUCCESS
+            val result = getSongUserCase.invoke(keyyword, offset, limit)
+            when (result) {
+                is Resource.Success -> {
+                    _songList.value = result.data
+                    _state.value = UIStatus.SUCCESS
+                }
+                is Resource.Error -> {
+                    _state.value = UIStatus.ERROR
+                }
+
+            }
         }
     }
 }
