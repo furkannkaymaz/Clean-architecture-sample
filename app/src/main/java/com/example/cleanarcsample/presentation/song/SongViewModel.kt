@@ -12,31 +12,32 @@ import com.example.cleanarcsample.utils.Resource
 import com.example.cleanarcsample.utils.extensions.launchOnIO
 import com.example.cleanarcsample.utils.extensions.launchOnMain
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-
 
 @HiltViewModel
 class SongViewModel @Inject constructor(
     private val getSongUserCase: GetSongUserCase
 ) : ViewModel() {
 
-    private val _songList = MutableLiveData<Resource<SongModel?>>()
-    val songList: LiveData<Resource<SongModel?>> = _songList
+    fun getSongs(keyword: String, offset: Int, limit: Int) : MutableStateFlow<Resource<SongModel?>> {
 
-    fun getSongs(keyyword: String, offset: Int, limit: Int) {
+        val stateFlow : MutableStateFlow<Resource<SongModel?>> = MutableStateFlow(Resource.Loading())
 
-        viewModelScope.launchOnMain {
-            val response = getSongUserCase.invoke(keyyword, offset, limit)
+        viewModelScope.launchOnIO {
+            val response = getSongUserCase.invoke(keyword, offset, limit)
             when (response) {
                 is Resource.Success -> {
-                    _songList.value = Resource.Success(response.data,response.state)
+                    stateFlow.emit(Resource.Success(response.data,response.state))
                 }
                 is Resource.Error -> {
-                    _songList.value = Resource.Error("Hata",null,response.state)
+                    stateFlow.emit(Resource.Error("Hata",null,response.state))
                 }
-
             }
         }
+        return stateFlow
+
     }
 }

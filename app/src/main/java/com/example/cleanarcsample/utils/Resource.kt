@@ -6,7 +6,6 @@ sealed class Resource<T>(
     var state: UIStatus? = null
 ) {
     class Success<T>(data: T, state: UIStatus?) : Resource<T>(data, null, state)
-    class Error<T>(message: String?, data: T?, state: UIStatus?) :
-        Resource<T>(null, message, state)
+    class Error<T>(message: String?, data: T?, state: UIStatus?) : Resource<T>(null, message, state)
+    class Loading<T>() : Resource<T>()
 }
-// you can use for network response handle
