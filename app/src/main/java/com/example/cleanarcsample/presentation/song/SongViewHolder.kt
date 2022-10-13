@@ -13,8 +13,8 @@ class SongViewHolder(
     override fun bind(data: SongModelResult, onItemClick: ((SongModelResult) -> Unit)?) {
         super.bind(data, onItemClick)
         with(binding) {
-            title.text = data.artistName
-            image.loadImage(data.artworkUrl100)
+            tvTitle.text = data.artistName
+            ivSong.loadImage(data.artworkUrl100)
 
             container.setOnClickListener {
                 onItemClick?.invoke(data)
