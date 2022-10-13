@@ -5,7 +5,8 @@
 ##### The project consists of Base Classes
 
 ##### Data Layer - BaseRepository -> for asynchronous service requests
-##### Presentation Layer - BaseFragment,BaseViewHolder -> compulsory or optional codes that should be in every fragment are collected here(ViewBinding, ViewModel)      ##### BaseAdapter -> recurring codes for each adapter are collected here. Adapter must be list adapter for diffUtill class.
+##### Presentation Layer - BaseFragment-> compulsory or optional codes that should be in every fragment are collected here(ViewBinding, ViewModel)     
+##### Presentation Layer - BaseAdapter,BaseViewHolder  -> recurring codes for each adapter are collected here. Adapter must be list adapter for diffUtill class.
                    
 ###### -> StateFlow
 ###### -> Navigation
