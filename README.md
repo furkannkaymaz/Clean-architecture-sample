@@ -13,3 +13,5 @@
 ###### -> Kotlin Coroutines
 ###### -> Hilt
 
+###### -> There is only one fragment for now, just a sample request.
+
