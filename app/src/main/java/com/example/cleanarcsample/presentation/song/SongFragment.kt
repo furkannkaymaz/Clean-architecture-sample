@@ -33,8 +33,8 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
 
                     }
                     UIStatus.ERROR -> {
-                        requireActivity().toast(it.message.toString())
                         configureVisibility(binding?.pb,false)
+                        requireActivity() toast (it.message.toString())
 
                     }
                     UIStatus.LOADING ->{

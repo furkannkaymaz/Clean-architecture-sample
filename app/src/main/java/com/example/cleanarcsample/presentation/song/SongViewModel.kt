@@ -2,11 +2,13 @@ package com.example.cleanarcsample.presentation.song
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.cleanarcsample.R
 import com.example.cleanarcsample.domain.song.GetSongUserCase
 import com.example.cleanarcsample.utils.response.UIStatus
 import com.example.cleanarcsample.data.songs.model.SongModel
 import com.example.cleanarcsample.utils.response.Resource
 import com.example.cleanarcsample.utils.extensions.launchOnIO
+import com.example.cleanarcsample.utils.extensions.string
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -31,7 +33,7 @@ class SongViewModel @Inject constructor(
                     _uiState.emit(Resource.Success(response.data, response.state))
                 }
                 is Resource.Error -> {
-                    _uiState.emit(Resource.Error("Hata", null, response.state))
+                    _uiState.emit(Resource.Error(string(R.string.CheckYourInternetConnection), null, response.state))
                 }
                 is Resource.Loading -> {
                     _uiState.emit(Resource.Loading(UIStatus.LOADING))
