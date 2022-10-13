@@ -12,6 +12,11 @@
 ##### -> Navigation
 ##### -> Kotlin Coroutines
 ##### -> Hilt
+##### -> Extension Funcitons
+##### -> DiffUtil
+##### -> Operator, infix funcitons
+##### -> Generics
+
 
 ##### -> There is only one fragment for now, just a sample request.
 
