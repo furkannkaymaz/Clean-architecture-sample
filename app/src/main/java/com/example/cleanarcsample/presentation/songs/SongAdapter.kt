@@ -1,10 +1,9 @@
-package com.example.cleanarcsample.presentation.song
+package com.example.cleanarcsample.presentation.songs
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.cleanarcsample.data.songs.model.SongModel
 import com.example.cleanarcsample.data.songs.model.SongModelResult
 import com.example.cleanarcsample.databinding.ItemSongBinding
 import com.example.cleanarcsample.presentation.base.BaseAdapter

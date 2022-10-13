@@ -1,6 +1,6 @@
-package com.example.cleanarcsample.domain.song
+package com.example.cleanarcsample.domain.songs
 
-import com.example.cleanarcsample.data.songs.model.SongModel
+import com.example.cleanarcsample.domain.songs.model.SongModel
 import com.example.cleanarcsample.utils.response.Resource
 import javax.inject.Inject
 

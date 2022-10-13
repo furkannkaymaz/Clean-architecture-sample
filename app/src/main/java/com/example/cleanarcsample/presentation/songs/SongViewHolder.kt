@@ -1,4 +1,4 @@
-package com.example.cleanarcsample.presentation.song
+package com.example.cleanarcsample.presentation.songs
 
 import com.example.cleanarcsample.data.songs.model.SongModelResult
 import com.example.cleanarcsample.databinding.ItemSongBinding
