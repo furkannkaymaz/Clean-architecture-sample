@@ -8,10 +8,10 @@
 ##### Presentation Layer - BaseFragment-> compulsory or optional codes that should be in every fragment are collected here(ViewBinding, ViewModel)     
 ##### Presentation Layer - BaseAdapter,BaseViewHolder  -> recurring codes for each adapter are collected here. Adapter must be list adapter for diffUtill class.
                    
-###### -> StateFlow
-###### -> Navigation
-###### -> Kotlin Coroutines
-###### -> Hilt
+##### -> StateFlow
+##### -> Navigation
+##### -> Kotlin Coroutines
+##### -> Hilt
 
-###### -> There is only one fragment for now, just a sample request.
+##### -> There is only one fragment for now, just a sample request.
 
