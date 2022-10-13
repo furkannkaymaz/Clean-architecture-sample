@@ -3,7 +3,7 @@ package com.example.cleanarcsample.presentation.songs
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.cleanarcsample.R
-import com.example.cleanarcsample.domain.songs.GetSongUserCase
+import com.example.cleanarcsample.domain.songs.usecase.GetSongUserCase
 import com.example.cleanarcsample.utils.response.UIStatus
 import com.example.cleanarcsample.domain.songs.model.SongModel
 import com.example.cleanarcsample.utils.response.Resource
