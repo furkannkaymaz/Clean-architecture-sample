@@ -26,7 +26,7 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
         super.observerData()
 
         lifecycleScope.launch {
-            viewModel.getSongs("a", offset, offset).listen {
+            viewModel.getSongs("a", offset, 5).listen {
                 when (it.state) {
                     UIStatus.SUCCESS -> {
                         songAdapter.submitList(it.data?.results)
@@ -63,7 +63,7 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
             offset += 5
             lifecycleScope.launch {
 
-                viewModel.getSongs("a", offset, offset).listen {
+                viewModel.getSongs("a", offset, 5).listen {
                     when (it.state) {
                         UIStatus.SUCCESS -> {
                             songAdapter.submitList(it.data?.results)
