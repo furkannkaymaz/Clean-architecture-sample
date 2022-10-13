@@ -48,6 +48,17 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
             }
         }
 
+    }
+
+    override fun layoutResource(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentSongBinding {
+        return FragmentSongBinding.inflate(inflater, container, false)
+    }
+
+    override fun clickListeners() {
+        super.clickListeners()
         binding?.btnAddMore?.setOnClickListener {
             offset += 5
             lifecycleScope.launch {
@@ -72,13 +83,14 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
                 }
             }
         }
+        binding?.btnDelete?.setOnClickListener {
+            clearData()
+        }
     }
 
-    override fun layoutResource(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentSongBinding {
-        return FragmentSongBinding.inflate(inflater, container, false)
+    private fun clearData(){
+        songAdapter.submitList(null)
+        offset = 5
     }
 
     override fun viewCreated() {
