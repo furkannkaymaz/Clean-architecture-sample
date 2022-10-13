@@ -2,7 +2,7 @@ package com.example.cleanarcsample.data.songs.model
 
 import java.io.Serializable
 
-data class Result(
+data class SongModelResult(
     val artistId: Int?,
     val artistName: String?,
     val artistViewUrl: String?,
