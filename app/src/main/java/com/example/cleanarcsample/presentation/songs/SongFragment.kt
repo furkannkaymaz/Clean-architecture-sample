@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.cleanarcsample.R
 import com.example.cleanarcsample.databinding.FragmentSongBinding
 import com.example.cleanarcsample.presentation.base.BaseFragment
 import com.example.cleanarcsample.utils.response.UIStatus
@@ -38,6 +39,9 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
                     UIStatus.LOADING ->{
                         configureVisibility(binding?.pb,true)
                     }
+                    else -> {
+                        requireContext() toast getString(R.string.somethingWentWrong)
+                    }
                 }
             }
         }
@@ -56,6 +60,9 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
                         }
                         UIStatus.LOADING ->{
                             configureVisibility(binding?.pb,true)
+                        }
+                        else -> {
+                            requireContext() toast getString(R.string.somethingWentWrong)
                         }
                     }
                 }
