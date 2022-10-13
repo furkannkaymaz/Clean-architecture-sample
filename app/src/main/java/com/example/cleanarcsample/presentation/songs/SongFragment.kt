@@ -62,7 +62,6 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
         binding?.btnAddMore?.setOnClickListener {
             offset += 5
             lifecycleScope.launch {
-
                 viewModel.getSongs("a", offset, 5).listen {
                     when (it.state) {
                         UIStatus.SUCCESS -> {
@@ -90,7 +89,7 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
 
     private fun clearData(){
         songAdapter.submitList(null)
-        offset = 5
+        offset = 0
     }
 
     override fun viewCreated() {
