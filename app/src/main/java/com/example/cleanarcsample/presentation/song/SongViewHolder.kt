@@ -4,7 +4,6 @@ import com.example.cleanarcsample.data.songs.model.SongModelResult
 import com.example.cleanarcsample.databinding.ItemSongBinding
 import com.example.cleanarcsample.presentation.base.BaseViewHolder
 import com.example.cleanarcsample.utils.extensions.loadImage
-import kotlinx.android.synthetic.main.item_song.view.*
 
 class SongViewHolder(
     val binding: ItemSongBinding

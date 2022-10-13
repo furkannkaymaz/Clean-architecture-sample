@@ -33,6 +33,9 @@ class SongViewModel @Inject constructor(
                 is Resource.Error -> {
                     _uiState.emit(Resource.Error("Hata", null, response.state))
                 }
+                is Resource.Loading -> {
+                    _uiState.emit(Resource.Loading(UIStatus.LOADING))
+                }
             }
         }
         return _uiState

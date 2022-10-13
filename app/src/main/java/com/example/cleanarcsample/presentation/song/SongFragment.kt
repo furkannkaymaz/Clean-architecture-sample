@@ -1,8 +1,8 @@
 package com.example.cleanarcsample.presentation.song
 
-
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -29,12 +29,16 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
                 when (it.state) {
                     UIStatus.SUCCESS -> {
                         songAdapter.submitList(it.data?.results)
+                        configureVisibility(binding?.pb,false)
+
                     }
                     UIStatus.ERROR -> {
                         requireActivity().toast(it.message.toString())
-                    }
-                    else -> {
+                        configureVisibility(binding?.pb,false)
 
+                    }
+                    UIStatus.LOADING ->{
+                        configureVisibility(binding?.pb,true)
                     }
                 }
             }
@@ -46,18 +50,19 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
                     when (it.state) {
                         UIStatus.SUCCESS -> {
                             songAdapter.submitList(it.data?.results)
+                            configureVisibility(binding?.pb,false)
                         }
                         UIStatus.ERROR -> {
                             requireActivity().toast(it.message.toString())
+                            configureVisibility(binding?.pb,false)
                         }
-                        else -> {
-
+                        UIStatus.LOADING ->{
+                            configureVisibility(binding?.pb,true)
                         }
                     }
                 }
             }
         }
-
     }
 
     override fun layoutResource(
@@ -78,4 +83,5 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
 
     }
+
 }
