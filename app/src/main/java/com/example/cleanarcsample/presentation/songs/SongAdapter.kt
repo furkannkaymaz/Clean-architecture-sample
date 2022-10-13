@@ -9,7 +9,9 @@ import com.example.cleanarcsample.databinding.ItemSongBinding
 import com.example.cleanarcsample.presentation.base.BaseAdapter
 import com.example.cleanarcsample.utils.adapter.getDiffUtilCallBack
 
-class SongAdapter() : BaseAdapter<SongModelResult, RecyclerView.ViewHolder>(
+class SongAdapter(
+    var onClick : (SongModelResult) -> Unit
+) : BaseAdapter<SongModelResult, RecyclerView.ViewHolder>(
     getDiffUtilCallBack()
 ) {
 
@@ -17,7 +19,7 @@ class SongAdapter() : BaseAdapter<SongModelResult, RecyclerView.ViewHolder>(
 
     override fun bindView(holder: RecyclerView.ViewHolder, position: Int) {
         (holder as SongViewHolder).bind(currentList[position]) {
-
+            onClick.invoke(it)
         }
     }
 

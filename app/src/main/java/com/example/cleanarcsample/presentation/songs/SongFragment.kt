@@ -19,12 +19,11 @@ import kotlinx.coroutines.launch
 class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
 
     override val viewModel: SongViewModel by viewModels()
-    private val songAdapter by lazy { SongAdapter() }
+    private lateinit var songAdapter : SongAdapter
     var offset = 5
 
     override fun observerData() {
         super.observerData()
-
         lifecycleScope.launch {
             viewModel.getSongs("a", offset, 5).listen {
                 when (it.state) {
@@ -47,7 +46,6 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
                 }
             }
         }
-
     }
 
     override fun layoutResource(
@@ -97,6 +95,10 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
     }
 
     private fun setAdapter() {
+
+        songAdapter = SongAdapter {
+            requireContext() toast it.collectionName.toString()
+        }
 
         binding?.rvSong?.adapter = songAdapter
         binding?.rvSong?.layoutManager =
