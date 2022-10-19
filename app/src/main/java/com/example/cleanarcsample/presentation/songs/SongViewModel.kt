@@ -11,6 +11,7 @@ import com.example.cleanarcsample.utils.extensions.launchOnIO
 import com.example.cleanarcsample.utils.extensions.string
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 
 @HiltViewModel
@@ -18,10 +19,10 @@ class SongViewModel @Inject constructor(
     private val getSongUserCase: GetSongUserCase
 ) : ViewModel() {
 
-    fun getSongs(keyword: String, offset: Int, limit: Int): MutableStateFlow<Resource<SongModel?>> {
+    private val _uiState: MutableStateFlow<Resource<SongModel?>> = MutableStateFlow(Resource.Loading(UIStatus.LOADING))
+    val uiState: StateFlow<Resource<SongModel?>> get() = _uiState
 
-        val _uiState: MutableStateFlow<Resource<SongModel?>> =
-            MutableStateFlow(Resource.Loading(UIStatus.LOADING))
+    fun getSongs(keyword: String, offset: Int, limit: Int): StateFlow<Resource<SongModel?>> {
 
         viewModelScope.launchOnIO {
 
