@@ -1,4 +1,4 @@
-package com.example.cleanarcsample.presentation.songs
+package com.example.cleanarcsample.presentation.songs.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

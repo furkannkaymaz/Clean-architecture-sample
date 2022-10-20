@@ -1,4 +1,4 @@
-package com.example.cleanarcsample.presentation.songs
+package com.example.cleanarcsample.presentation.songs.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cleanarcsample.R
 import com.example.cleanarcsample.databinding.FragmentSongBinding
 import com.example.cleanarcsample.presentation.base.BaseFragment
+import com.example.cleanarcsample.presentation.songs.adapter.SongAdapter
 import com.example.cleanarcsample.utils.response.UIStatus
 import com.example.cleanarcsample.utils.extensions.listen
 import com.example.cleanarcsample.utils.extensions.toast

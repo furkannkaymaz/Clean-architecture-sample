@@ -1,4 +1,4 @@
-package com.example.cleanarcsample.presentation.songs
+package com.example.cleanarcsample.presentation.songs.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
