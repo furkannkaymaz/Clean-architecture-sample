@@ -15,14 +15,13 @@ abstract class BaseRepository {
             }catch (throwable : Throwable){
                 when(throwable){
                     is HttpException ->{
-                        Resource.Error("Server Error",null, UIStatus.ERROR)
+                        Resource.Error("Server Error", UIStatus.ERROR)
                     }
                     else -> {
-                        Resource.Error("Network Error",null, UIStatus.ERROR)
+                        Resource.Error("Network Error", UIStatus.ERROR)
                     }
                 }
             }
-
         }
     }
 }

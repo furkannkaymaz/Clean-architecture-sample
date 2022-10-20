@@ -26,14 +26,16 @@ class SongViewModel @Inject constructor(
 
         viewModelScope.launchOnIO {
 
-            val response = getSongUserCase.invoke(keyword, offset, limit)
-            when (response) {
+            when (val response = getSongUserCase.invoke(keyword, offset, limit)) {
 
                 is Resource.Success -> {
                     _uiState.emit(Resource.Success(response.data, response.state))
                 }
                 is Resource.Error -> {
-                    _uiState.emit(Resource.Error(string(R.string.CheckYourInternetConnection), null, response.state))
+                    _uiState.emit(Resource.Error(
+                        string(R.string.CheckYourInternetConnection),
+                        response.state
+                    ))
                 }
                 is Resource.Loading -> {
                     _uiState.emit(Resource.Loading(UIStatus.LOADING))

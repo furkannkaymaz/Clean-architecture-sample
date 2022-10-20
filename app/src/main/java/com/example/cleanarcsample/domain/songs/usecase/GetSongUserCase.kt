@@ -10,6 +10,5 @@ class GetSongUserCase @Inject constructor(
 ) {
     suspend operator fun invoke(keyword: String, offset: Int, limit: Int): Resource<SongModel> {
         return songRepository.getSong(keyword, limit, offset)
-
     }
 }
