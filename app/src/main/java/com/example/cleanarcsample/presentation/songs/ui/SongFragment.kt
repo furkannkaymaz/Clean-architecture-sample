@@ -61,24 +61,7 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
         binding?.btnAddMore?.setOnClickListener {
             offset += 5
             lifecycleScope.launch {
-                viewModel.getSongs("a", offset, 5).listen {
-                    when (it.state) {
-                        UIStatus.SUCCESS -> {
-                            songAdapter.submitList(it.data?.results)
-                            configureVisibility(binding?.pb, false)
-                        }
-                        UIStatus.ERROR -> {
-                            requireActivity().toast(it.message.toString())
-                            configureVisibility(binding?.pb, false)
-                        }
-                        UIStatus.LOADING -> {
-                            configureVisibility(binding?.pb, true)
-                        }
-                        else -> {
-                            requireContext() toast getString(R.string.somethingWentWrong)
-                        }
-                    }
-                }
+                viewModel.getSongs("a", offset, 5)
             }
         }
         binding?.btnDelete?.setOnClickListener {
