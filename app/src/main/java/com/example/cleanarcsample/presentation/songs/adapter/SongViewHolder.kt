@@ -6,7 +6,7 @@ import com.example.cleanarcsample.presentation.base.BaseViewHolder
 import com.example.cleanarcsample.utils.extensions.loadImage
 
 class SongViewHolder(
-    val binding: ItemSongBinding
+    private val binding: ItemSongBinding
 ) : BaseViewHolder<SongModelResult>(binding) {
 
     override fun bind(data: SongModelResult, onItemClick: ((SongModelResult) -> Unit)?) {
