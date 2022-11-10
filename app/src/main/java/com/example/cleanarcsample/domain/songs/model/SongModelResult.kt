@@ -1,4 +1,4 @@
-package com.example.cleanarcsample.data.songs.model
+package com.example.cleanarcsample.domain.songs.model
 
 import java.io.Serializable
 

@@ -25,6 +25,7 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
 
     override fun observerData() {
         super.observerData()
+
         lifecycleScope.launch {
             viewModel.getSongs("a", offset, 5).listen {
                 when (it.state) {

@@ -1,6 +1,6 @@
 package com.example.cleanarcsample.presentation.songs.adapter
 
-import com.example.cleanarcsample.data.songs.model.SongModelResult
+import com.example.cleanarcsample.domain.songs.model.SongModelResult
 import com.example.cleanarcsample.databinding.ItemSongBinding
 import com.example.cleanarcsample.presentation.base.BaseViewHolder
 import com.example.cleanarcsample.utils.extensions.loadImage
