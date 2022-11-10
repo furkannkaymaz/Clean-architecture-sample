@@ -7,11 +7,14 @@
 ##### Data Layer - BaseRepository -> for asynchronous service requests
 ##### Presentation Layer - BaseFragment-> compulsory or optional codes that should be in every fragment are collected here(ViewBinding, ViewModel)     
 ##### Presentation Layer - BaseAdapter,BaseViewHolder  -> recurring codes for each adapter are collected here. List adapter used for diffUtill class.
+
+##### Test - ViewModel unit test
                    
 ##### -> StateFlow
 ##### -> Navigation
 ##### -> Kotlin Coroutines
 ##### -> Hilt
+##### -> Unit Test (View Model)
 ##### -> Extension Funcitons
 ##### -> DiffUtil
 ##### -> Operator, infix funcitons
