@@ -42,7 +42,7 @@ class SongViewModel @Inject constructor(
                 }
             }
         }
-        return _uiState
+        return uiState
 
     }
 }
