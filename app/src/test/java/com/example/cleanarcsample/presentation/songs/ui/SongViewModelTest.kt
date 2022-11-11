@@ -53,6 +53,14 @@ class SongViewModelTest {
         assertFalse(data.value.data != null)
 
     }
+    @Test
+    fun `get song list keyword under 3 letter return empty list`() = runBlocking {
+        val data = viewModel.getSongs("AA", 45, 2)
+        delay(600)
+        assertEquals(data.value.data?.results, arrayListOf<SongModelResult>())
+
+    }
+
 
 
 }

@@ -2,6 +2,7 @@ package com.example.cleanarcsample.presentation
 
 import com.example.cleanarcsample.domain.songs.model.SongModel
 import com.example.cleanarcsample.domain.songs.repository.SongRepository
+import com.example.cleanarcsample.presentation.songs.ui.SongFragment
 import com.example.cleanarcsample.utils.response.Resource
 import com.example.cleanarcsample.utils.response.UIStatus
 
@@ -9,7 +10,7 @@ class FakeSongRepository(private var list: SongModel) : SongRepository {
 
     override suspend fun getSong(keyword: String, offset: Int, limit: Int): Resource<SongModel> {
         return when {
-            keyword.length < 15 && limit > 0 && offset < 100 -> {
+            keyword.length < 15 && limit > 0 && offset < 100 && keyword.length > 3  -> {
                 Resource.Success(list, UIStatus.SUCCESS)
             }
             limit == 0 -> {
@@ -20,6 +21,9 @@ class FakeSongRepository(private var list: SongModel) : SongRepository {
             }
             offset > 100 -> {
                 Resource.Error("Offset limit exceeded ", UIStatus.ERROR)
+            }
+            keyword.length < 3 -> {
+                Resource.Success(SongModel(0, arrayListOf()), UIStatus.LOADING)
             }
             else -> {
                 Resource.Success(list, UIStatus.SUCCESS)
