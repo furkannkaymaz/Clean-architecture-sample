@@ -19,14 +19,11 @@ class SongViewModel @Inject constructor(
     private val getSongUserCase: GetSongUserCase
 ) : ViewModel() {
 
-    private val _uiState: MutableStateFlow<Resource<SongModel?>> =
-        MutableStateFlow(Resource.Loading(UIStatus.LOADING))
-    val uiState: StateFlow<Resource<SongModel?>> get() = _uiState
+    private val _uiState: MutableStateFlow<Resource<SongModel?>> = MutableStateFlow(Resource.Loading(UIStatus.LOADING))
 
     fun getSongs(keyword: String, offset: Int, limit: Int): StateFlow<Resource<SongModel?>> {
 
         viewModelScope.launchOnIO {
-
             when (val response = getSongUserCase.invoke(keyword, offset, limit)) {
 
                 is Resource.Success -> {
@@ -45,7 +42,6 @@ class SongViewModel @Inject constructor(
                 }
             }
         }
-        return uiState
-
+        return _uiState
     }
 }

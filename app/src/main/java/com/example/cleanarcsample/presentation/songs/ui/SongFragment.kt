@@ -62,7 +62,7 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
         binding?.btnAddMore?.setOnClickListener {
             offset += 5
             lifecycleScope.launch {
-                viewModel.getSongs("a", offset, 5)
+                viewModel.getSongs("a", 5,offset)
             }
         }
         binding?.btnDelete?.setOnClickListener {
