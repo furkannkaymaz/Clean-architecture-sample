@@ -19,7 +19,8 @@ class SongViewModel @Inject constructor(
     private val getSongUserCase: GetSongUserCase
 ) : ViewModel() {
 
-    private val _uiState: MutableStateFlow<Resource<SongModel?>> = MutableStateFlow(Resource.Loading(UIStatus.LOADING))
+    private val _uiState: MutableStateFlow<Resource<SongModel?>> =
+        MutableStateFlow(Resource.Loading(UIStatus.LOADING))
     val uiState: StateFlow<Resource<SongModel?>> get() = _uiState
 
     fun getSongs(keyword: String, offset: Int, limit: Int): StateFlow<Resource<SongModel?>> {
@@ -32,10 +33,12 @@ class SongViewModel @Inject constructor(
                     _uiState.emit(Resource.Success(response.data, response.state))
                 }
                 is Resource.Error -> {
-                    _uiState.emit(Resource.Error(
-                        string(R.string.CheckYourInternetConnection),
-                        response.state
-                    ))
+                    _uiState.emit(
+                        Resource.Error(
+                            string(R.string.CheckYourInternetConnection),
+                            response.state
+                        )
+                    )
                 }
                 is Resource.Loading -> {
                     _uiState.emit(Resource.Loading(UIStatus.LOADING))
