@@ -19,7 +19,7 @@ class SongViewModelTest {
 
     private lateinit var viewModel: SongViewModel
     private lateinit var userCase: GetSongUserCase
-    
+
     @Before
     fun setUp() {
         userCase = GetSongUserCase(FakeSongRepository(getDummyData()))
@@ -34,7 +34,7 @@ class SongViewModelTest {
     }
 
     @Test
-    fun `get song list limit invalid exceeded return assertFalse`() = runBlocking {
+    fun `get song list limit invalid exceeded return False`() = runBlocking {
         val data = viewModel.getSongs("Şarkı Listesi", offset = 8, limit = 0)
         delay(600)
         assertFalse(data.value.data != null)
