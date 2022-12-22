@@ -20,7 +20,6 @@ abstract class BaseAdapter<T,VH : RecyclerView.ViewHolder>(
     override fun onBindViewHolder(holder: VH, position: Int) {
             bindView(holder, position)
     }
-
 }
 
 
