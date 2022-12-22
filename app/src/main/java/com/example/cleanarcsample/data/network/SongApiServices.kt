@@ -4,7 +4,6 @@ import com.example.cleanarcsample.data.model.SongModel
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-
 interface SongApiServices {
 
     @GET("search")

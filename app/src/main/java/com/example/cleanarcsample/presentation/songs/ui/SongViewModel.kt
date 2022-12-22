@@ -35,14 +35,12 @@ class SongViewModel @Inject constructor(
                     is Resource.Error<*> -> {
                         _uiState.emit(
                             Resource.Error(
-                                string(R.string.CheckYourInternetConnection),
+                                it.message,
                                 it.state
                             )
                         )
                     }
-                    is Resource.Loading<*> -> {
-                        _uiState.emit(Resource.Loading(UIStatus.LOADING))
-                    }
+                    else -> Unit
                 }
             }
         }

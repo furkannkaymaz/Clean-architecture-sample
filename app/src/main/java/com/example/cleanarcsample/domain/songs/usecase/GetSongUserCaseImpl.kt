@@ -28,12 +28,7 @@ class GetSongUserCaseImpl @Inject constructor(
                 emit(Resource.Success(mapper.map(response.data?.results!!), response.state))
             }
             is Resource.Error<*> -> {
-                emit(
-                    Resource.Error(
-                        response.message,
-                        response.state
-                    )
-                )
+                emit(Resource.Error(response.message, response.state))
             }
             else -> Unit
         }

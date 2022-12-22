@@ -38,13 +38,11 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> : Fragment() {
         clickListeners()
     }
 
-     fun configureVisibility(view: View?,isVisible : Boolean){
-        if (isVisible){
-            view?.visibility = View.VISIBLE
-        }else{
-            view?.visibility = View.GONE
-        }
-    }
+     fun configureVisibility(view: View?,isVisible : Boolean) = if (isVisible){
+         view?.visibility = View.VISIBLE
+     }else{
+         view?.visibility = View.GONE
+     }
 
     override fun onDestroyView() {
         super.onDestroyView()
