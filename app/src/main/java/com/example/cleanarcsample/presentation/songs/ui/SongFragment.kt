@@ -30,7 +30,7 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
             viewModel.getSongs("a", offset, 5).listen {
                 when (it.state) {
                     UIStatus.SUCCESS -> {
-                        songAdapter.submitList(it.data?.results)
+                        songAdapter.submitList(it.data)
                         configureVisibility(binding?.pb, false)
 
                     }
@@ -82,7 +82,7 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
     private fun setAdapter() {
 
         songAdapter = SongAdapter {
-            requireContext() toast it.collectionName.toString()
+            requireContext() toast it.artistName!!
         }
 
         binding?.rvSong?.adapter = songAdapter

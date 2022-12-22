@@ -7,11 +7,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.cleanarcsample.data.model.SongModelResult
 import com.example.cleanarcsample.databinding.ItemSongBinding
 import com.example.cleanarcsample.presentation.base.BaseAdapter
+import com.example.cleanarcsample.presentation.songs.ui.SongUiData
 import com.example.cleanarcsample.utils.adapter.getDiffUtilCallBack
 
 class SongAdapter(
-    var onClick : (SongModelResult) -> Unit
-) : BaseAdapter<SongModelResult, RecyclerView.ViewHolder>(
+    var onClick : (SongUiData) -> Unit
+) : BaseAdapter<SongUiData, RecyclerView.ViewHolder>(
     getDiffUtilCallBack()
 ) {
 

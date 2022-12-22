@@ -2,7 +2,6 @@ package com.example.cleanarcsample.data.songs.repository
 
 import com.example.cleanarcsample.app.di.NetworkModule
 import com.example.cleanarcsample.data.network.SongApiServices
-import com.example.cleanarcsample.domain.songs.repository.SongRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
