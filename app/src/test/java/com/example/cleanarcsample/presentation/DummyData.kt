@@ -1,7 +1,7 @@
 package com.example.cleanarcsample.presentation
 
-import com.example.cleanarcsample.domain.songs.model.SongModel
-import com.example.cleanarcsample.domain.songs.model.SongModelResult
+import com.example.cleanarcsample.data.model.SongModel
+import com.example.cleanarcsample.data.model.SongModelResult
 
 fun getDummyData() : SongModel {
     val song1 = SongModelResult(

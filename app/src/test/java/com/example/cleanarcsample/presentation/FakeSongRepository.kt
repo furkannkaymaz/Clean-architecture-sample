@@ -1,8 +1,7 @@
 package com.example.cleanarcsample.presentation
 
-import com.example.cleanarcsample.domain.songs.model.SongModel
+import com.example.cleanarcsample.data.model.SongModel
 import com.example.cleanarcsample.domain.songs.repository.SongRepository
-import com.example.cleanarcsample.presentation.songs.ui.SongFragment
 import com.example.cleanarcsample.utils.response.Resource
 import com.example.cleanarcsample.utils.response.UIStatus
 

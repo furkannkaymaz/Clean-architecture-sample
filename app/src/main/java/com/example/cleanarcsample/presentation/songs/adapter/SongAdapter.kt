@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.cleanarcsample.domain.songs.model.SongModelResult
+import com.example.cleanarcsample.data.model.SongModelResult
 import com.example.cleanarcsample.databinding.ItemSongBinding
 import com.example.cleanarcsample.presentation.base.BaseAdapter
 import com.example.cleanarcsample.utils.adapter.getDiffUtilCallBack

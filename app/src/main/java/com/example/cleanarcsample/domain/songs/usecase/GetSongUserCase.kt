@@ -1,7 +1,7 @@
 package com.example.cleanarcsample.domain.songs.usecase
 
 import com.example.cleanarcsample.domain.songs.repository.SongRepository
-import com.example.cleanarcsample.domain.songs.model.SongModel
+import com.example.cleanarcsample.data.model.SongModel
 import com.example.cleanarcsample.utils.response.Resource
 import javax.inject.Inject
 

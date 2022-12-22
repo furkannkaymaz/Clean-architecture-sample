@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.cleanarcsample.R
 import com.example.cleanarcsample.domain.songs.usecase.GetSongUserCase
 import com.example.cleanarcsample.utils.response.UIStatus
-import com.example.cleanarcsample.domain.songs.model.SongModel
+import com.example.cleanarcsample.data.model.SongModel
 import com.example.cleanarcsample.utils.response.Resource
 import com.example.cleanarcsample.utils.extensions.launchOnIO
 import com.example.cleanarcsample.utils.extensions.string
