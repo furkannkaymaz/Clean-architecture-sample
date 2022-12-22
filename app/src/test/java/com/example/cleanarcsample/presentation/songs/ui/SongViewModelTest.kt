@@ -29,7 +29,6 @@ class SongViewModelTest {
     @get:Rule
     var instantTaskExecutorRule = InstantTaskExecutorRule()
 
-
     @Before
     fun setUp() {
         repository = FakeSongRepository(getDummyData())
@@ -42,7 +41,6 @@ class SongViewModelTest {
         launchOnIO {
             val data = viewModel.getSongs("123", offset = 5, limit =  5)
             delay(500)
-        //    assertTrue(data.value.data?.results?.first()?.artistName != null)
             assertTrue(data.value.data?.first()?.artistName != null)
         }
 

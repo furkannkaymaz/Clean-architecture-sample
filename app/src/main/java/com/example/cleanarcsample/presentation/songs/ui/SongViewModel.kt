@@ -7,7 +7,6 @@ import com.example.cleanarcsample.utils.response.UIStatus
 import com.example.cleanarcsample.domain.songs.entity.SongEntity
 import com.example.cleanarcsample.domain.songs.mapper.SongListMapper
 import com.example.cleanarcsample.domain.songs.usecase.GetSongUseCase
-import com.example.cleanarcsample.domain.songs.usecase.GetSongUserCaseImpl
 import com.example.cleanarcsample.utils.response.Resource
 import com.example.cleanarcsample.utils.extensions.launchOnIO
 import com.example.cleanarcsample.utils.extensions.string
@@ -30,7 +29,6 @@ class SongViewModel @Inject constructor(
         viewModelScope.launchOnIO {
             getSongUserCase.invoke(keyword,offset,limit).collectLatest {
                 when (it) {
-
                     is Resource.Success<*> -> {
                         _uiState.emit(Resource.Success(mapper.map(it.data!!), it.state))
                     }

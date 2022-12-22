@@ -5,4 +5,6 @@
     <string name="CheckYourInternetConnection">Lütfen bağlantınızı kontrol edin</string>
     <string name="somethingWentWrong">Someting Went Wrong</string>
     <string name="clear">Temizle</string>
+    <string name="addValue">Add</string>
+    <string name="clearAll">Clear</string>
 </resources>

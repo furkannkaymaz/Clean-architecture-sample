@@ -17,7 +17,7 @@
         android:id="@+id/btnAddMore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ekle"
+        android:text="@string/addValue"
         app:layout_constraintBottom_toTopOf="@id/btnDelete"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -26,7 +26,7 @@
         android:id="@+id/btnDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/clear"
+        android:text="@string/clearAll"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
