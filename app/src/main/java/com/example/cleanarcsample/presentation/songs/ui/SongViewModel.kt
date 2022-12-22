@@ -14,6 +14,7 @@ import com.example.cleanarcsample.utils.extensions.string
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collectLatest
 import javax.inject.Inject
 
 @HiltViewModel
@@ -27,21 +28,23 @@ class SongViewModel @Inject constructor(
     fun getSongs(keyword: String, offset: Int, limit: Int): StateFlow<Resource<List<SongUiData?>>> {
 
         viewModelScope.launchOnIO {
-            when (val response = getSongUserCase.invoke(keyword, offset, limit)) {
+            getSongUserCase.invoke(keyword,offset,limit).collectLatest {
+                when (it) {
 
-                is Resource.Success<*> -> {
-                    _uiState.emit(Resource.Success(mapper.map(response.data!!), response.state))
-                }
-                is Resource.Error<*> -> {
-                    _uiState.emit(
-                        Resource.Error(
-                            string(R.string.CheckYourInternetConnection),
-                            response.state
+                    is Resource.Success<*> -> {
+                        _uiState.emit(Resource.Success(mapper.map(it.data!!), it.state))
+                    }
+                    is Resource.Error<*> -> {
+                        _uiState.emit(
+                            Resource.Error(
+                                string(R.string.CheckYourInternetConnection),
+                                it.state
+                            )
                         )
-                    )
-                }
-                is Resource.Loading<*> -> {
-                    _uiState.emit(Resource.Loading(UIStatus.LOADING))
+                    }
+                    is Resource.Loading<*> -> {
+                        _uiState.emit(Resource.Loading(UIStatus.LOADING))
+                    }
                 }
             }
         }

@@ -1,7 +1,6 @@
 package com.example.cleanarcsample.domain.songs.usecase
 
 import com.example.cleanarcsample.R
-import com.example.cleanarcsample.data.model.SongModel
 import com.example.cleanarcsample.data.model.SongModelResult
 import com.example.cleanarcsample.data.songs.repository.SongRepository
 import com.example.cleanarcsample.domain.songs.entity.SongEntity
@@ -18,39 +17,17 @@ class GetSongUserCaseImpl @Inject constructor(
     private val mapper: SongListMapper<SongModelResult, SongEntity>
 ) : GetSongUseCase {
 
-    override suspend fun invoke(
-        keyword: String,
-        offset: Int,
-        limit: Int
-    ): Resource<List<SongEntity>> {
-        return Resource.Success(
-            mapper.map(
-                songRepository.getSong(
-                    keyword,
-                    offset,
-                    limit
-                ).data?.results!!
-            ), UIStatus.SUCCESS
-        )
-    }
-    }
-
-
-/*class GetSongUserCaseImpl @Inject constructor(
-    private val songRepository: SongRepository,
-    private val mapper: SongListMapper<SongModelResult, SongEntity>
-) : GetSongUseCase {
-
-    override suspend fun invoke(
+    override fun invoke(
         keyword: String,
         offset: Int,
         limit: Int
     ): Flow<Resource<List<SongEntity>>> = flow {
         emit(Resource.Loading(UIStatus.LOADING))
-        when (val response = songRepository.getSong(keyword, offset, limit).data?.results!!) {
+
+        when (val response = songRepository.getSong(keyword, offset, limit)) {
 
             is Resource.Success<*> -> {
-                emit(Resource.Success(mapper.map(response), response.state))
+                emit(Resource.Success(mapper.map(response.data?.results!!), response.state))
             }
             is Resource.Error<*> -> {
                 emit(
@@ -60,6 +37,7 @@ class GetSongUserCaseImpl @Inject constructor(
                     )
                 )
             }
+            else -> Unit
         }
     }
-}*/
+}
