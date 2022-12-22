@@ -4,9 +4,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.cleanarcsample.R
 import com.example.cleanarcsample.utils.response.UIStatus
-import com.example.cleanarcsample.data.model.SongModel
 import com.example.cleanarcsample.domain.songs.entity.SongEntity
 import com.example.cleanarcsample.domain.songs.mapper.SongListMapper
+import com.example.cleanarcsample.domain.songs.usecase.GetSongUseCase
 import com.example.cleanarcsample.domain.songs.usecase.GetSongUserCaseImpl
 import com.example.cleanarcsample.utils.response.Resource
 import com.example.cleanarcsample.utils.extensions.launchOnIO
@@ -18,7 +18,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SongViewModel @Inject constructor(
-    private val getSongUserCase: GetSongUserCaseImpl,
+    private val getSongUserCase: GetSongUseCase,
     private val mapper: SongListMapper<SongEntity, SongUiData>
 ) : ViewModel() {
 
@@ -27,7 +27,7 @@ class SongViewModel @Inject constructor(
     fun getSongs(keyword: String, offset: Int, limit: Int): StateFlow<Resource<List<SongUiData?>>> {
 
         viewModelScope.launchOnIO {
-            when (val response = getSongUserCase.getSong(keyword, offset, limit)) {
+            when (val response = getSongUserCase.invoke(keyword, offset, limit)) {
 
                 is Resource.Success<*> -> {
                     _uiState.emit(Resource.Success(mapper.map(response.data!!), response.state))

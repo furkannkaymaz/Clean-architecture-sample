@@ -82,7 +82,7 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
     private fun setAdapter() {
 
         songAdapter = SongAdapter {
-            requireContext() toast it.artistName!!
+            requireContext() toast it.artistName.toString()
         }
 
         binding?.rvSong?.adapter = songAdapter

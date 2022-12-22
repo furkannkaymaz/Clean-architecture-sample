@@ -2,6 +2,8 @@ package com.example.cleanarcsample.presentation
 
 import com.example.cleanarcsample.data.model.SongModel
 import com.example.cleanarcsample.data.model.SongModelResult
+import com.example.cleanarcsample.domain.songs.entity.SongEntity
+import com.example.cleanarcsample.presentation.songs.ui.SongUiData
 
 fun getDummyData() : SongModel {
     val song1 = SongModelResult(
@@ -41,3 +43,22 @@ fun getDummyData() : SongModel {
     return SongModel(1, arrayListOf(song1))
 
 }
+
+fun getDummyDataForEntity() : List<SongEntity> {
+    val song = SongEntity(
+        "Volkan Konak",
+        "Volkan Konak",
+    )
+
+    return listOf(song)
+
+}
+
+fun getDummyDataForUi() : List<SongUiData> {
+    val song = SongUiData(
+        "Volkan Konak",
+        "Volkan Konak2",
+    )
+    return listOf(song)
+}
+

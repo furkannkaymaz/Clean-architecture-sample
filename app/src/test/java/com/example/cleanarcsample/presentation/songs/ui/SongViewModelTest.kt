@@ -2,7 +2,8 @@ package com.example.cleanarcsample.presentation.songs.ui
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.cleanarcsample.data.model.SongModelResult
-import com.example.cleanarcsample.domain.songs.usecase.GetSongUserCase
+import com.example.cleanarcsample.domain.songs.mapper.SongListEntityMapper
+import com.example.cleanarcsample.presentation.FakeGetSongUseCaseImpl
 import com.example.cleanarcsample.presentation.FakeSongRepository
 import com.example.cleanarcsample.presentation.getDummyData
 import com.example.cleanarcsample.utils.extensions.launchOnIO
@@ -14,20 +15,26 @@ import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import org.mockito.Mock
 
 @ExperimentalCoroutinesApi
 class SongViewModelTest {
 
     private lateinit var viewModel: SongViewModel
-    private lateinit var userCase: GetSongUserCase
+    private lateinit var userCase: FakeGetSongUseCaseImpl
+    private lateinit var repository: FakeSongRepository
+    private val songUiMapper = SongUiMapper()
+    private val songListEntityMapper = SongListEntityMapper()
 
     @get:Rule
     var instantTaskExecutorRule = InstantTaskExecutorRule()
 
+
     @Before
     fun setUp() {
-        userCase = GetSongUserCase(FakeSongRepository(getDummyData()))
-        viewModel = SongViewModel(userCase)
+        repository = FakeSongRepository(getDummyData())
+        userCase = FakeGetSongUseCaseImpl(repository,songListEntityMapper)
+        viewModel = SongViewModel(userCase,songUiMapper)
     }
 
     @Test
@@ -35,7 +42,8 @@ class SongViewModelTest {
         launchOnIO {
             val data = viewModel.getSongs("123", offset = 5, limit =  5)
             delay(500)
-            assertTrue(data.value.data?.results?.first()?.artistName != null)
+        //    assertTrue(data.value.data?.results?.first()?.artistName != null)
+            assertTrue(data.value.data?.first()?.artistName != null)
         }
 
     }
@@ -65,7 +73,7 @@ class SongViewModelTest {
         launchOnIO {
             val data = viewModel.getSongs("A", 45, 2)
             delay(600)
-            assertEquals(data.value.data?.results, arrayListOf<SongModelResult>())
+            assertEquals(data.value.data, arrayListOf<SongModelResult>())
         }
     }
 
