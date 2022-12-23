@@ -1,4 +1,4 @@
-package com.example.cleanarcsample.data.model
+package com.example.cleanarcsample.data.dto
 
 import java.io.Serializable
 

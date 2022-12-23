@@ -1,6 +1,5 @@
 package com.example.cleanarcsample.data.di
 
-import com.example.cleanarcsample.app.di.NetworkModule
 import com.example.cleanarcsample.data.network.SongApiServices
 import com.example.cleanarcsample.data.songs.repository.SongRepository
 import com.example.cleanarcsample.data.songs.repository.SongRepositoryImp

@@ -1,6 +1,6 @@
 package com.example.cleanarcsample.data.network
 
-import com.example.cleanarcsample.data.model.SongModel
+import com.example.cleanarcsample.data.dto.SongModel
 import retrofit2.http.GET
 import retrofit2.http.Query
 

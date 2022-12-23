@@ -1,7 +1,7 @@
 package com.example.cleanarcsample.presentation
 
-import com.example.cleanarcsample.data.model.SongModel
-import com.example.cleanarcsample.data.model.SongModelResult
+import com.example.cleanarcsample.data.dto.SongModel
+import com.example.cleanarcsample.data.dto.SongModelResult
 import com.example.cleanarcsample.domain.songs.entity.SongEntity
 import com.example.cleanarcsample.presentation.songs.ui.SongUiData
 

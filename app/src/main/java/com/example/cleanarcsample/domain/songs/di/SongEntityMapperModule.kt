@@ -1,6 +1,6 @@
 package com.example.cleanarcsample.domain.songs.di
 
-import com.example.cleanarcsample.data.model.SongModelResult
+import com.example.cleanarcsample.data.dto.SongModelResult
 import com.example.cleanarcsample.domain.songs.entity.SongEntity
 import com.example.cleanarcsample.domain.songs.mapper.SongListEntityMapper
 import com.example.cleanarcsample.domain.songs.mapper.SongListMapper

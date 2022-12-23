@@ -1,7 +1,6 @@
 package com.example.cleanarcsample.domain.songs.mapper
 
-import com.example.cleanarcsample.data.model.SongModel
-import com.example.cleanarcsample.data.model.SongModelResult
+import com.example.cleanarcsample.data.dto.SongModelResult
 import com.example.cleanarcsample.domain.songs.entity.SongEntity
 import javax.inject.Inject
 import javax.inject.Singleton

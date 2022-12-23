@@ -1,7 +1,7 @@
 package com.example.cleanarcsample.presentation.songs.ui
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.example.cleanarcsample.data.model.SongModelResult
+import com.example.cleanarcsample.data.dto.SongModelResult
 import com.example.cleanarcsample.domain.songs.mapper.SongListEntityMapper
 import com.example.cleanarcsample.presentation.FakeGetSongUseCaseImpl
 import com.example.cleanarcsample.presentation.FakeSongRepository
