@@ -51,7 +51,6 @@ fun getDummyDataForEntity() : List<SongEntity> {
     )
 
     return listOf(song)
-
 }
 
 fun getDummyDataForUi() : List<SongUiData> {

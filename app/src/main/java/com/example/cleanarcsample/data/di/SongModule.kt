@@ -1,7 +1,9 @@
-package com.example.cleanarcsample.data.songs.repository
+package com.example.cleanarcsample.data.di
 
 import com.example.cleanarcsample.app.di.NetworkModule
 import com.example.cleanarcsample.data.network.SongApiServices
+import com.example.cleanarcsample.data.songs.repository.SongRepository
+import com.example.cleanarcsample.data.songs.repository.SongRepositoryImp
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,5 +26,4 @@ class SongModule {
     fun provideSongRepository(songApi: SongApiServices): SongRepository {
         return SongRepositoryImp(songApi)
     }
-
 }

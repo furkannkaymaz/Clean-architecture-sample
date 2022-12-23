@@ -32,7 +32,6 @@ class SongFragment : BaseFragment<FragmentSongBinding, SongViewModel>() {
                     UIStatus.SUCCESS -> {
                         songAdapter.submitList(it.data)
                         configureVisibility(binding?.pb, false)
-
                     }
                     UIStatus.ERROR -> {
                         configureVisibility(binding?.pb, false)
