@@ -15,7 +15,7 @@
 ##### -> Navigation
 ##### -> Kotlin Coroutines
 ##### -> Hilt
-##### -> Unit Test (View Model)
+##### -> Unit Test
 ##### -> Extension Funcitons
 ##### -> DiffUtil
 ##### -> Operator, infix funcitons
