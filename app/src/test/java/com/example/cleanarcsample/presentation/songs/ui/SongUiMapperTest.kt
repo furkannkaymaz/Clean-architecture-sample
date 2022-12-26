@@ -22,12 +22,12 @@ class SongUiMapperTest{
     }
 
     @Test
-    fun `artistName when songListEntityMapper is same`() {
+    fun `artistName when SongUiMapper is same`() {
         assertEquals(songEntity.first().artistName,songEntity.first().artistName)
     }
 
     @Test
-    fun `artistName when songListEntityMapper is not same`() {
+    fun `artistName when SongUiMapper is not same`() {
         assertNotEquals(songEntity.first().artistName,songEntity.first().artworkUrl100)
     }
 
