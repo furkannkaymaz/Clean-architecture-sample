@@ -3,8 +3,8 @@ package com.example.cleanarcsample.presentation.songs.ui
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.cleanarcsample.data.dto.SongModelResult
 import com.example.cleanarcsample.domain.songs.mapper.SongListEntityMapper
-import com.example.cleanarcsample.presentation.FakeGetSongUseCaseImpl
-import com.example.cleanarcsample.presentation.FakeSongRepository
+import com.example.cleanarcsample.domain.songs.usecase.FakeGetSongUseCaseImpl
+import com.example.cleanarcsample.data.repository.FakeSongRepository
 import com.example.cleanarcsample.presentation.getDummyData
 import com.example.cleanarcsample.utils.extensions.launchOnIO
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -42,7 +42,6 @@ class SongViewModelTest {
             delay(500)
             assertTrue(data.value.data?.first()?.artistName != null)
         }
-
     }
 
     @Test

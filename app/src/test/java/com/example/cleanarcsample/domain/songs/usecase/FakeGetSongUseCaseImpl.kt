@@ -1,4 +1,4 @@
-package com.example.cleanarcsample.presentation
+package com.example.cleanarcsample.domain.songs.usecase
 
 import com.example.cleanarcsample.R
 import com.example.cleanarcsample.data.dto.SongModelResult

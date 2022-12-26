@@ -1,4 +1,4 @@
-package com.example.cleanarcsample.presentation
+package com.example.cleanarcsample.data.repository
 
 import com.example.cleanarcsample.data.dto.SongModel
 import com.example.cleanarcsample.data.songs.repository.SongRepository
