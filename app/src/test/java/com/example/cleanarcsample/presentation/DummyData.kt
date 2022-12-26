@@ -47,16 +47,15 @@ fun getDummyData() : SongModel {
 fun getDummyDataForEntity() : List<SongEntity> {
     val song = SongEntity(
         "Volkan Konak",
-        "Volkan Konak",
+        "www/volkankonak",
     )
-
     return listOf(song)
 }
 
 fun getDummyDataForUi() : List<SongUiData> {
     val song = SongUiData(
         "Volkan Konak",
-        "Volkan Konak2",
+        "www/volkan Konak",
     )
     return listOf(song)
 }
