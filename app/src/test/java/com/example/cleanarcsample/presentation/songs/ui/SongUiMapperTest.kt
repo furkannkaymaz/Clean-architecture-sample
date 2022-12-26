@@ -1,9 +1,6 @@
 package com.example.cleanarcsample.presentation.songs.ui
 
-import com.example.cleanarcsample.data.dto.SongModelResult
 import com.example.cleanarcsample.domain.songs.entity.SongEntity
-import com.example.cleanarcsample.domain.songs.mapper.SongListEntityMapper
-import com.example.cleanarcsample.presentation.getDummyData
 import com.example.cleanarcsample.presentation.getDummyDataForEntity
 import org.junit.Assert.*
 import org.junit.Before
