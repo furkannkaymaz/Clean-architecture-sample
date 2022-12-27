@@ -9,8 +9,9 @@
 ##### Presentation Layer - BaseAdapter,BaseViewHolder  -> recurring codes for each adapter are collected here. List adapter used for diffUtill class.
 ##### Domain Layer - Mapper, Usecases etc.
                   
-##### -> StateFlow
+
 ##### -> Navigation
+##### -> StateFlow
 ##### -> Kotlin Coroutines
 ##### -> Hilt
 ##### -> Unit Test
@@ -18,6 +19,7 @@
 ##### -> DiffUtil
 ##### -> Operator, infix funcitons
 ##### -> Generics
+etc..
 
 
 ##### -> There is only one fragment for now, just a sample request.
