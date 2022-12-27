@@ -5,7 +5,7 @@ import com.example.cleanarcsample.data.dto.SongModelResult
 import com.example.cleanarcsample.domain.songs.mapper.SongListEntityMapper
 import com.example.cleanarcsample.domain.songs.usecase.FakeGetSongUseCaseImpl
 import com.example.cleanarcsample.data.repository.FakeSongRepository
-import com.example.cleanarcsample.presentation.getDummyData
+import com.example.cleanarcsample.getDummyData
 import com.example.cleanarcsample.utils.extensions.launchOnIO
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay

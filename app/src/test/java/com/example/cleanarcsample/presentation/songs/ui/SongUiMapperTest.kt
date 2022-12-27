@@ -1,7 +1,7 @@
 package com.example.cleanarcsample.presentation.songs.ui
 
 import com.example.cleanarcsample.domain.songs.entity.SongEntity
-import com.example.cleanarcsample.presentation.getDummyDataForEntity
+import com.example.cleanarcsample.getDummyDataForEntity
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test

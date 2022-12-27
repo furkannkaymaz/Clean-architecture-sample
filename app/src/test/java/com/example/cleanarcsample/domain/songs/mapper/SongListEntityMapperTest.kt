@@ -2,7 +2,7 @@ package com.example.cleanarcsample.domain.songs.mapper
 
 import com.example.cleanarcsample.data.dto.SongModelResult
 import com.example.cleanarcsample.domain.songs.entity.SongEntity
-import com.example.cleanarcsample.presentation.getDummyData
+import com.example.cleanarcsample.getDummyData
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test

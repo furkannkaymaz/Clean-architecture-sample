@@ -1,4 +1,4 @@
-package com.example.cleanarcsample.presentation
+package com.example.cleanarcsample
 
 import com.example.cleanarcsample.data.dto.SongModel
 import com.example.cleanarcsample.data.dto.SongModelResult
