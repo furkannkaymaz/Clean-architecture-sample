@@ -9,6 +9,8 @@
 ##### Domain Layer - Mapper, Usecases
                   
 ##### -> MVVM-Clean architecture
+##### -> UseCases
+##### -> Mapper Classes
 ##### -> Navigation
 ##### -> Flow
 ##### -> Kotlin Coroutines
