@@ -9,7 +9,7 @@
 ##### Domain Layer - Mapper, Usecases
                   
 ##### -> MVVM-Clean architecture
-##### -> UseCases
+##### -> Use Case
 ##### -> Mapper Classes
 ##### -> Navigation
 ##### -> Flow
