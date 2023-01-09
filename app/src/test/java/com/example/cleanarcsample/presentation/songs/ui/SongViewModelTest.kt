@@ -46,14 +46,14 @@ class SongViewModelTest {
 
     @Test
     fun `get song list limit invalid exceeded return False`() = runTest(UnconfinedTestDispatcher()) {
-        val data = viewModel.getSongs("Şarkı Listesi", offset = 8, limit = 0)
+        val data = viewModel.getSongs("Song List", offset = 8, limit = 0)
         delay(600)
         assertFalse(data.value.data != null)
     }
 
     @Test
     fun `get song list keyword limit exceeded return false`() = runTest(UnconfinedTestDispatcher()) {
-        val data = viewModel.getSongs("Çok uzun bir yazı deneme testi", 2, 2)
+        val data = viewModel.getSongs("Too long song list test", 2, 2)
         delay(600)
         assertFalse(data.value.data != null)
     }
@@ -72,5 +72,4 @@ class SongViewModelTest {
             assertEquals(data.value.data, arrayListOf<SongModelResult>())
         }
     }
-
 }

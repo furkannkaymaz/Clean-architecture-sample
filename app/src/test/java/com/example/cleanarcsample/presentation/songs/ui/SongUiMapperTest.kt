@@ -27,5 +27,4 @@ class SongUiMapperTest{
     fun `artistName when SongUiMapper is not same`() {
         assertNotEquals(songEntity.first().artistName,songEntity.first().artworkUrl100)
     }
-
 }

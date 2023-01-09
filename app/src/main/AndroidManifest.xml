@@ -19,7 +19,7 @@
         android:theme="@style/Theme.DigiSample"
         tools:targetApi="31">
         <activity
-            android:name="com.example.cleanarcsample.presentation.activity.MainActivity"
+            android:name="com.example.cleanarcsample.presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

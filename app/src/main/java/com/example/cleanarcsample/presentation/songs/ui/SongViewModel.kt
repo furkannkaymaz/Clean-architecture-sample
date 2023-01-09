@@ -2,14 +2,12 @@ package com.example.cleanarcsample.presentation.songs.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.cleanarcsample.R
 import com.example.cleanarcsample.utils.response.UIStatus
 import com.example.cleanarcsample.domain.songs.entity.SongEntity
 import com.example.cleanarcsample.domain.songs.mapper.SongListMapper
 import com.example.cleanarcsample.domain.songs.usecase.GetSongUseCase
 import com.example.cleanarcsample.utils.response.Resource
 import com.example.cleanarcsample.utils.extensions.launchOnIO
-import com.example.cleanarcsample.utils.extensions.string
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
