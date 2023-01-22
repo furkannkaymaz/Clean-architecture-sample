@@ -18,7 +18,6 @@ class SongListEntityMapperTest{
         songModelResult = getDummyData().results!!
         songEntity = songListEntityMapper.map(songModelResult)
     }
-
     @Test
     fun `artistName when songListEntityMapper is same`() {
         assertEquals(songModelResult.first().artistName,songEntity.first().artistName)
@@ -28,5 +27,4 @@ class SongListEntityMapperTest{
     fun `artistName when songListEntityMapper is not same`() {
         assertNotEquals(songModelResult.first().artistName,songEntity.first().artworkUrl100)
     }
-
 }

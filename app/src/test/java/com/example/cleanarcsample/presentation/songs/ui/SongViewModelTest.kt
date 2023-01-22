@@ -20,7 +20,7 @@ import org.junit.Test
 class SongViewModelTest {
 
     private lateinit var viewModel: SongViewModel
-    private lateinit var userCase: FakeGetSongUseCaseImpl
+    private lateinit var useCase: FakeGetSongUseCaseImpl
     private lateinit var repository: FakeSongRepository
     private val songUiMapper = SongUiMapper()
     private val songListEntityMapper = SongListEntityMapper()
@@ -31,8 +31,8 @@ class SongViewModelTest {
     @Before
     fun setUp() {
         repository = FakeSongRepository(getDummyData())
-        userCase = FakeGetSongUseCaseImpl(repository,songListEntityMapper)
-        viewModel = SongViewModel(userCase,songUiMapper)
+        useCase = FakeGetSongUseCaseImpl(repository,songListEntityMapper)
+        viewModel = SongViewModel(useCase,songUiMapper)
     }
 
     @Test

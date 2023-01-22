@@ -2,6 +2,7 @@ package com.example.cleanarcsample.domain.songs.usecase
 
 import com.example.cleanarcsample.R
 import com.example.cleanarcsample.data.dto.SongModelResult
+import com.example.cleanarcsample.data.repository.FakeSongRepository
 import com.example.cleanarcsample.data.songs.repository.SongRepository
 import com.example.cleanarcsample.domain.songs.entity.SongEntity
 import com.example.cleanarcsample.domain.songs.mapper.SongListMapper
@@ -13,7 +14,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 class FakeGetSongUseCaseImpl(
-    private val songRepository: SongRepository,
+    private val fakeSongRepository: FakeSongRepository,
     private val mapper: SongListMapper<SongModelResult, SongEntity>
 ) : GetSongUseCase {
     override fun invoke(
@@ -23,7 +24,7 @@ class FakeGetSongUseCaseImpl(
     ): Flow<Resource<List<SongEntity>>> = flow {
         emit(Resource.Loading(UIStatus.LOADING))
 
-        when (val response = songRepository.getSong(keyword, offset, limit)) {
+        when (val response = fakeSongRepository.getSong(keyword, offset, limit)) {
 
             is Resource.Success<*> -> {
                 emit(Resource.Success(mapper.map(response.data?.results!!), response.state))
