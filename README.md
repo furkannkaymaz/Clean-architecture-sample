@@ -16,7 +16,7 @@
 ##### -> Kotlin Coroutines
 ##### -> DI (Hilt)
 ##### -> Unit Test
-##### -> Extension Funcitons
+##### -> Extension Func
 ##### -> DiffUtil
 ##### -> Operator, infix funcitons
 ##### -> Generics
