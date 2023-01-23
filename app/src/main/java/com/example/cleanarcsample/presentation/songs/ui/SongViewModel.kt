@@ -20,9 +20,9 @@ class SongViewModel @Inject constructor(
     private val mapper: SongListMapper<SongEntity, SongUiData>
 ) : ViewModel() {
 
-    private val _uiState: MutableStateFlow<Resource<List<SongUiData?>>> = MutableStateFlow(Resource.Loading(UIStatus.LOADING))
+    private val _uiState: MutableStateFlow<Resource<List<SongUiData>>> = MutableStateFlow(Resource.Loading(UIStatus.LOADING))
 
-    fun getSongs(keyword: String, offset: Int, limit: Int): StateFlow<Resource<List<SongUiData?>>> {
+    fun getSongs(keyword: String, offset: Int, limit: Int): StateFlow<Resource<List<SongUiData>>> {
 
         viewModelScope.launchOnIO {
             getSongUseCase.invoke(keyword,offset,limit).collectLatest {
