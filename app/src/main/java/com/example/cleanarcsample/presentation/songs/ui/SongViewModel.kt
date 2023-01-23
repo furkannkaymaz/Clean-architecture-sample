@@ -27,10 +27,10 @@ class SongViewModel @Inject constructor(
         viewModelScope.launchOnIO {
             getSongUseCase.invoke(keyword,offset,limit).collectLatest {
                 when (it) {
-                    is Resource.Success<*> -> {
+                    is Resource.Success -> {
                         _uiState.emit(Resource.Success(mapper.map(it.data!!), it.state))
                     }
-                    is Resource.Error<*> -> {
+                    is Resource.Error -> {
                         _uiState.emit(
                             Resource.Error(
                                 it.message,

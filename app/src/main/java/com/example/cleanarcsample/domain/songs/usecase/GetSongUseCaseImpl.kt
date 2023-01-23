@@ -24,10 +24,10 @@ class GetSongUseCaseImpl @Inject constructor(
 
         when (val response = songRepository.getSong(keyword, offset, limit)) {
 
-            is Resource.Success<*> -> {
+            is Resource.Success -> {
                 emit(Resource.Success(mapper.map(response.data?.results!!), response.state))
             }
-            is Resource.Error<*> -> {
+            is Resource.Error -> {
                 emit(Resource.Error(response.message, response.state))
             }
             else -> Unit

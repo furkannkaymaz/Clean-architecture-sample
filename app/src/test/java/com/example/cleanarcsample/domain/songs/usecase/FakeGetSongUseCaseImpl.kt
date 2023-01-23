@@ -26,10 +26,10 @@ class FakeGetSongUseCaseImpl(
 
         when (val response = fakeSongRepository.getSong(keyword, offset, limit)) {
 
-            is Resource.Success<*> -> {
+            is Resource.Success -> {
                 emit(Resource.Success(mapper.map(response.data?.results!!), response.state))
             }
-            is Resource.Error<*> -> {
+            is Resource.Error -> {
                 emit(
                     Resource.Error(
                         string(R.string.CheckYourInternetConnection),
