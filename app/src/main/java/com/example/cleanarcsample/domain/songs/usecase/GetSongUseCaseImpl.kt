@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class GetSongUserCaseImpl @Inject constructor(
+class GetSongUseCaseImpl @Inject constructor(
     private val songRepository: SongRepository,
     private val mapper: SongListMapper<SongModelResult, SongEntity>
 ) : GetSongUseCase {

@@ -16,7 +16,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SongViewModel @Inject constructor(
-    private val getSongUserCase: GetSongUseCase,
+    private val getSongUseCase: GetSongUseCase,
     private val mapper: SongListMapper<SongEntity, SongUiData>
 ) : ViewModel() {
 
@@ -25,7 +25,7 @@ class SongViewModel @Inject constructor(
     fun getSongs(keyword: String, offset: Int, limit: Int): StateFlow<Resource<List<SongUiData?>>> {
 
         viewModelScope.launchOnIO {
-            getSongUserCase.invoke(keyword,offset,limit).collectLatest {
+            getSongUseCase.invoke(keyword,offset,limit).collectLatest {
                 when (it) {
                     is Resource.Success<*> -> {
                         _uiState.emit(Resource.Success(mapper.map(it.data!!), it.state))

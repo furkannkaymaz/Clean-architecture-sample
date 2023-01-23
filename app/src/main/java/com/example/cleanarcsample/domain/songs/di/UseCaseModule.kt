@@ -1,7 +1,7 @@
 package com.example.cleanarcsample.domain.songs.di
 
 import com.example.cleanarcsample.domain.songs.usecase.GetSongUseCase
-import com.example.cleanarcsample.domain.songs.usecase.GetSongUserCaseImpl
+import com.example.cleanarcsample.domain.songs.usecase.GetSongUseCaseImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -12,6 +12,6 @@ import dagger.hilt.android.components.ViewModelComponent
 interface UseCaseModule {
 
     @Binds
-    fun bindGetSongUserCase(getSongUserCase: GetSongUserCaseImpl): GetSongUseCase
+    fun bindGetSongUseCase(getSongUserCase: GetSongUseCaseImpl): GetSongUseCase
 }
 
