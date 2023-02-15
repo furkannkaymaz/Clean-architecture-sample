@@ -20,7 +20,6 @@
 ##### -> DiffUtil
 ##### -> Operator, infix funcitons
 ##### -> Generics
-etc..
 
 
 ##### -> There is only one fragment for now, just a sample request.
