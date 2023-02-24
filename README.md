@@ -11,7 +11,6 @@ This project follows a three-tier architecture consisting of a data layer, prese
 This project is designed to request data from the iTunes API, process the data, and display it in the user interface. The base classes are used to perform these functions, and application developers can customize these base classes to suit their own projects.
 
 ### Technologies
-
 The following technologies were used in this project:
                   
 -  Kotlin
