@@ -14,15 +14,15 @@ This project is designed to request data from the iTunes API, process the data, 
 
 The following technologies were used in this project:
                   
-- MVVM-Clean architecture
--  Use Case
--  Mapper Classes
+-  Kotlin
+-  MVVM architecture
+-  Clean Architecture 
 -  Navigation
 -  Flow
 -  Kotlin Coroutines
 -  DI (Hilt)
 -  Unit Test
--  Extension Func
+-  Extension Functions
 -  DiffUtil
 -  Operator, infix funcitons
 -  Generics
